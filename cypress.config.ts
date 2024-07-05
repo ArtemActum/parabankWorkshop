@@ -2,11 +2,10 @@ import { defineConfig } from "cypress";
 import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 import { addCucumberPreprocessorPlugin } from "@badeball/cypress-cucumber-preprocessor";
 import { createEsbuildPlugin } from "@badeball/cypress-cucumber-preprocessor/esbuild";
-// import * as createBundler from "@bahmutov/cypress-esbuild-preprocessor";
 
 export default defineConfig({
   e2e: {
-	specPattern: '**/e2e/*.ts',
+	specPattern: '**/e2e/*.{feature,ts}',
 	viewportWidth: 1920,
 	viewportHeight: 1080,
     async setupNodeEvents(
