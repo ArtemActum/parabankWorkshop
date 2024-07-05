@@ -1,73 +1,73 @@
 import BasePage from './basePage'
 
 export default class RegisterPage extends BasePage {
-	// locators
-	registerBtn() {
-		return cy.get('#loginPanel > :nth-child(3) > a')
-	}
+    // locators
+    registerBtn(): Cypress.Chainable<JQuery<HTMLElement>> {
+        return cy.get('#loginPanel > :nth-child(3) > a')
+    }
 
-	firstNameInput() {
-		return cy.get("input[id='customer.firstName']")
-	}
+    firstNameInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.firstName']")
+    }
 
-	lastNameInput() {
-		return cy.get("input[id='customer.lastName']")
-	}
+    lastNameInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.lastName']")
+    }
 
-	streetInput() {
-		return cy.get("input[id='customer.address.street']")
-	}
+    streetInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.address.street']")
+    }
 
-	cityInput() {
-		return cy.get("input[id='customer.address.city']")
-	}
+    cityInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.address.city']")
+    }
 
-	stateInput() {
-		return cy.get("input[id='customer.address.state']")
-	}
+    stateInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.address.state']")
+    }
 
-	zipCodeInput() {
-		return cy.get("input[id='customer.address.zipCode']")
-	}
+    zipCodeInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.address.zipCode']")
+    }
 
-	phoneNunberInput() {
-		return cy.get("input[id='customer.phoneNumber']")
-	}
+    phoneNumberInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.phoneNumber']")
+    }
 
-	ssnInput() {
-		return cy.get("input[id='customer.ssn']")
-	}
+    ssnInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.ssn']")
+    }
 
-	usernameInput() {
-		return cy.get("input[id='customer.username']")
-	}
+    usernameInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.username']")
+    }
 
-	passwordInput() {
-		return cy.get("input[id='customer.password']")
-	}
+    passwordInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='customer.password']")
+    }
 
-	repeatedPasswordInput() {
-		return cy.get("input[id='repeatedPassword']")
-	}
+    repeatedPasswordInput(): Cypress.Chainable<JQuery<HTMLInputElement>> {
+        return cy.get("input[id='repeatedPassword']")
+    }
 
-	registrationBtn() {
-		return cy.get("input[value='Register']")
-	}
+    registrationBtn(): Cypress.Chainable<JQuery<HTMLElement>> {
+        return cy.get("input[value='Register']")
+    }
 
-	//methods
-	register(email, password) {
-		this.registerBtn().click()
-		this.firstNameInput().type('Name')
-		this.lastNameInput().type('Lastname')
-		this.streetInput().type('address')
-		this.cityInput().type('city')
-		this.stateInput().type('state')
-		this.zipCodeInput().type('ZipCode')
-		this.phoneNunberInput().type('1111')
-		this.ssnInput().type('1111')
-		this.usernameInput().type(email)
-		this.passwordInput().type(password)
-		this.repeatedPasswordInput().type(password)
-		this.registrationBtn().click()
-	}
+    // methods
+    register(email: string, password: string): void {
+        this.registerBtn().click()
+        this.firstNameInput().type('Name')
+        this.lastNameInput().type('Lastname')
+        this.streetInput().type('address')
+        this.cityInput().type('city')
+        this.stateInput().type('state')
+        this.zipCodeInput().type('ZipCode')
+        this.phoneNumberInput().type('1111')
+        this.ssnInput().type('1111')
+        this.usernameInput().type(email)
+        this.passwordInput().type(password)
+        this.repeatedPasswordInput().type(password)
+        this.registrationBtn().click()
+    }
 }
