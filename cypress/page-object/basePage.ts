@@ -12,6 +12,10 @@ export default class BasePage {
 		return cy.get("input[value='Log In']")
 	}
 
+	contactUsBtn(): Cypress.Chainable<JQuery<HTMLElement>> {
+		return cy.get(':nth-child(8) > a')
+	}
+
 	//methods
 	open(): void {
 		cy.visit('https://parabank.parasoft.com/parabank/index.htm')
@@ -25,5 +29,9 @@ export default class BasePage {
 
 	checkUrlAfterLogin(): void {
 		cy.url().should('include', '/overview')
+	}
+
+	clickOnContactUsBtn(): void {
+		this.contactUsBtn().click()
 	}
 }
