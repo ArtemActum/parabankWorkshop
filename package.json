@@ -12,6 +12,8 @@
 	"dependencies": {
 		"@badeball/cypress-cucumber-preprocessor": "^20.0.7",
 		"@bahmutov/cypress-esbuild-preprocessor": "^2.2.1",
+		"@shelex/cypress-allure-plugin": "^2.40.2",
+		"allure-commandline": "^2.29.0",
 		"cypress": "^13.11.0",
 		"prettier": "^3.3.2",
 		"typescript": "^5.4.5"
