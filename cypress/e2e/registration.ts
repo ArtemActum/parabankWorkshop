@@ -4,9 +4,9 @@ const registerPage = new RegisterPage()
 
 describe('Registrations tests', () => {
 	it('Registration', () => {
-		const randomNumber =  Math.floor(Math.random() * 100) + 1;
-		const email = `parabank-${randomNumber}@yopmail.com`;
-		cy.log(`Generated email: ${email}`);
+		const randomNumber = Math.floor(Math.random() * 100) + 1
+		const email = `parabank-${randomNumber}@yopmail.com`
+		cy.log(`Generated email: ${email}`)
 
 		registerPage.open()
 		registerPage.register(email, 'Test1234')
@@ -15,7 +15,7 @@ describe('Registrations tests', () => {
 	it('Negative registration test', () => {
 		cy.visit('https://parabank.parasoft.com/parabank/index.htm')
 		cy.get('#loginPanel > :nth-child(3) > a').click()
-		cy.get("input[id='customer.firstName']").type("12312")
+		cy.get("input[id='customer.firstName']").type('12312')
 		cy.get("input[id='customer.lastName']").type('Lastname')
 		cy.get("input[id='customer.address.street']").type('address')
 		cy.get("input[id='customer.address.city']").type('city')
