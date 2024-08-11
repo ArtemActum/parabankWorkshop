@@ -4,7 +4,14 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"cy:open": "cypress open",
+		"cy:run": "cypress run",
+		"cy:mobile": "cypress run --config viewportWidth=375 --config viewportHeight=768",
+		"cy:tablet": "cypress run --config viewportWidth=1024 --config viewportHeight=768",
+		"cy:apis": "cypress run --spec ./cypress/e2e/APIs.ts --browser chrome --headed",
+		"cy:firefox": "cypress run --browser firefox",
+		"cy:features": "cypress run --spec ./cypress/e2e/*.feature",
+		"cy:timeout": "cypress run --config pageLoadTimeout=10000"
 	},
 	"keywords": [],
 	"author": "",
