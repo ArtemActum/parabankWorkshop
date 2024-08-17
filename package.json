@@ -29,5 +29,8 @@
 		"stepDefinitions": [
 			"cypress/step-definitions/*.{js,ts}"
 		]
+	},
+	"devDependencies": {
+		"cypress-mochawesome-reporter": "^3.8.2"
 	}
 }

@@ -10,12 +10,25 @@ export default defineConfig({
     specPattern: 'cypress/e2e/*.{feature,ts}',
     viewportWidth: 1920,
     viewportHeight: 1080,
+    reporter: 'cypress-mochawesome-reporter',
+    reporterOptions: {
+      charts: true,
+      reportPageTitle: 'Cypress Reporter',
+      embeddedScreenshots: true,
+      inlineAssets: true,
+      saveAllAttempts: false,
+      saveJson: false,
+      videoOnFailOnly: true,
+      ignoreVideos: true,
+      quiet: false,
+    },
     async setupNodeEvents(
       on: Cypress.PluginEvents,
       config: Cypress.PluginConfigOptions,
     ): Promise<Cypress.PluginConfigOptions> {
       // This is required for the preprocessor to be able to generate JSON reports after each run, and more,
       await addCucumberPreprocessorPlugin(on, config);
+      require('cypress-mochawesome-reporter/plugin')(on);
       on(
         'file:preprocessor',
         createBundler({
